@@ -1,13 +1,45 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title></title>
-	<link rel="stylesheet" href="">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>D3js Assignment</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="index.js"></script>
 </head>
 <body>
-<script src="index.js"></script>
-<script src="https://d3js.org/d3.v4.min.js"></script>	
+    <header>
+        <h1 style="text-align: center">Rajya Sabha Data</h1><hr>
+    </header>
+    <p>Enter page number: <input type="number" name="PageNumber" value="1" id='pageinput'>
+    Search by ministry name: <input type="text" name="MinistryName" value="" id="searchname"> </p>
+
+    <p>
+        <div class="sort">
+        <h3 class="hdr">Sort By:</h3>
+            <input type="checkbox" name="opt1" id="ministryN" value="ministry"> Ministry
+            <input type="checkbox" name="opt2" id="questionN" value="question"> Question Number
+            <input type="checkbox" name="opt3" id="idN" value="idnumber" checked> ID</div>
+        <div class="order">
+         <h3 class="hdr">Order By:</h3>
+            <input type="radio" name="Order" id="asc" value="ascending" checked> Ascending
+            <input type="radio" name="Order" id="dsc" value="descending"> Descending
+        </div> 
+        <div class="ques">
+        <h3 class="hdr">Question Type:</h3>
+            <input type="radio" name="typeq" id="starred" value="starred"> Starred
+            <input type="radio" name="typeq" id="unstarred" value="unstarred"> Unstarred
+            <input type="radio" name="typeq" id="allstar" value="allstar" checked> Both   </div>      
+    </p>
+    <div class="space">
+    <button id="Show" onclick="showtable()">Show Table</button>
+    <button id="Show"onclick="showchart()">Show Bar Graph</button></div>
+    <hr>
+    <h2 id="tableheader" style="text-align: center"></h2>
+    <div id="table"></div>
+    <h2 id="chartheader" style="text-align: center"></h2>
+    <svg class="bar-chart" style="padding: 40px"></svg>
 </body>
 </html>
